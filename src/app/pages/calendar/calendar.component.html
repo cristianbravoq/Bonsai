@@ -1,0 +1,41 @@
+<nav class="navbar lg navbar-dark bg-dark nav_bonsai1">
+
+    <div class="container-fluid nav_bonsai2">
+      <a id="nav_bonsai" [routerLink]="['/home']" style="text-decoration: none; color: lavender; font-weight: bold;">
+        <img class="col align-self-center" src="../../../assets/images/Bonsailog.png" style="width: 35px;">
+        BONSAI
+      </a>
+      <button class="align-self-center btn"><a style="text-decoration:none; color: lavender;"[routerLink]="['/home']">Regresar</a></button>
+    </div>
+
+</nav>
+
+<div class="container card mt-3">
+	<div>
+		<img class="calendar_img" src="../../../assets/images/35-edit-outline.gif">
+	</div>
+	<div class="wrapper-calendar h-100" style="background: #f5f5f5;">
+		<div class="header-calendar">
+			<div>
+				<button (click)="changeMonth(-1)" class="btn-prev">Antes</button>
+			</div>
+			<h1 class="mes_año">{{dateSelect | date:'MMMM, yyyy'}}</h1>
+			<div>
+				<button (click)="changeMonth(1)" class="btn-next">Siguiente</button>
+			</div>
+		</div>
+		<ol >
+			<li *ngFor="let day of week" class="day-name">{{day | slice:0:3}}</li>
+
+			<li class="p-3 card" style="background: #acbb9f;" (click)="clickDay(day)" [style.gridColumnStart]="first ? day?.indexWeek : 'auto'"
+			 *ngFor="let day of monthSelect;let first = first">
+				<span class="align-self-center">{{day?.value}}</span>
+			</li>
+		</ol>
+	</div>
+
+	<hr>
+	<div class="p-3">
+		Fecha: {{dateValue | date}}
+	</div>
+</div>

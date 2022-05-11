@@ -1,0 +1,7 @@
+.placeholder::placeholder{
+    color: rgb(158, 149, 149);
+}
+
+.search {
+    cursor: wait !important;
+}

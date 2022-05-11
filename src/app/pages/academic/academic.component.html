@@ -1,0 +1,50 @@
+<nav class="navbar lg navbar-dark bg-dark nav_bonsai1">
+
+    <div class="container-fluid nav_bonsai2">
+        <a id="nav_bonsai" [routerLink]="['/home']" style="text-decoration: none; color: lavender; font-weight: bold;">
+            <img class="col align-self-center" src="../../../assets/images/Bonsailog.webp" style="width: 35px;">
+            BONSAI
+        </a>
+      <button class="align-self-center btn"><a style="text-decoration:none; color: lavender;"[routerLink]="['/dashboard/']">Listas de clase</a></button>
+      <button class="align-self-center btn"><a style="text-decoration:none; color: lavender;"[routerLink]="['/report/', student[0].idestudiantes]">Reporte Escolar</a></button>
+    </div>
+
+</nav>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-5">
+            <div class="card">
+                <div class="p-4">
+                    <div class="d-flex flex-row mb-3">
+                        <div class=""><img src="../../../assets/images/Bonsailogblack.png" alt="user" class="rounded-circle" width="80" /></div>
+                        <div class="pl-4 m-2 card">
+                            <h3 class="card-title">{{this.student[0].Nombre}} {{this.student[0].Apellido}}</h3>
+                            <p>Grado: {{this.student[0].Grado}}</p>
+                            <p class="">Documento: {{this.student[0].Documento}}</p>
+                        </div>
+                    </div>
+                    <div class="row flex-wrap">
+                        <div class="row border-right text-center">
+                            <div class="row flex-wrap d-flex border-right" *ngFor="let person of this.student;let i = index">
+                                <h2 class="font-light">{{person.Asignatura}}</h2>
+                                <div class="input-group mb-2">
+                                    <input type="number" name="Indicadores" class="form-control rounded-3" placeholder="Indicadores" style="width: 130px;" [(ngModel)]="Indicadores[i]">
+                                    <input type="number" name="Calificacion" class="form-control rounded-3" placeholder="Calificacion" style="width: 130px;" [(ngModel)]="Calificacion[i]">
+                                    <button class="btn btn-success btn-outline-warning" type="button" (click)="updateCurso(i)" >Subir Nota</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body border-top">
+                    <p class="text-center aboutscroll">
+                        Lista de asignaturas, puedes asignar el valor del indicador de evaluacion y la calificacion. <br>
+                        Para actualizar los valores dar click en subir Nota al lado de cada asignatura.
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

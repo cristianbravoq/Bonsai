@@ -1,0 +1,135 @@
+
+<nav class="navbar lg navbar-dark bg-dark nav_bonsai1">
+
+    <div class="container-fluid nav_bonsai2">
+      <a id="nav_bonsai" [routerLink]="['/home']">
+        <img class="col align-self-center" src="../../../assets/images/Bonsailog.png" style="width: 35px;">
+        <strong class="col align-self-center" style="color: lavender;">  BONSAI</strong>
+      </a>
+      <button class="align-self-center btn"><a style="text-decoration: none; color: lavender;"[routerLink]="['/home']">Regresar</a></button>
+    </div>
+  
+  </nav>
+
+<div class="container-fluid mt-2" style="color: black;">
+
+    <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            Estudiante
+            </mat-panel-title>
+            <mat-panel-description class="justify-content-between align-items-center">
+            Datos personales
+            <mat-icon>account_circle</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <mat-form-field class="container col-md-4" appearance="fill">
+            <mat-label>Nombres</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field class="container col-md-5" appearance="fill">
+            <mat-label>Apellidos</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field class="container col-md-5" appearance="fill">
+            <mat-label>Documento</mat-label>
+            <input matInput type="number" min="1">
+          </mat-form-field>
+
+          <mat-form-field class="container col-md-4" appearance="fill">
+            <mat-label>Grado</mat-label>
+            <input matInput type="number" min="1" max="5">
+          </mat-form-field>
+          
+          <mat-form-field class="container col-md-3" appearance="fill">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+          </mat-form-field>
+          <mat-datepicker #picker></mat-datepicker>
+          
+          <mat-action-row>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+          </mat-action-row>
+        </mat-expansion-panel>
+        <br>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+            <mat-panel-title>
+            Curso
+            </mat-panel-title>
+            <mat-panel-description class="justify-content-between align-items-center">
+            <p>Asignacion del curso</p>
+            <mat-icon>map</mat-icon>
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <h4>Seleccion de docente</h4>
+            <mat-form-field class="container col-md-4" appearance="fill">
+            <mat-label>Docente Asignado</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+
+            <h4>Seleccion de asignatura</h4>
+            <mat-form-field class="container col-md-4" appearance="fill">
+            <mat-label>Asignaturas disponibles</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+
+            <mat-action-row>
+            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+            <button mat-button color="primary" (click)="nextStep()">Next</button>
+            </mat-action-row>
+        </mat-expansion-panel>
+        <br>
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Inscripciones
+            </mat-panel-title>
+            <mat-panel-description class="justify-content-between align-items-center">
+              Inscripcion de estudiante a un curso
+              <mat-icon>date_range</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <h4>Seleccion de curso</h4>
+            <mat-form-field class="container col-md-4" appearance="fill">
+            <mat-label>Grado cursado</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="container col-md-4" appearance="fill">
+                <mat-label>Documento del estudiante</mat-label>
+                <input matInput type="number" min="1">
+              </mat-form-field>
+
+            <mat-form-field class="container col-md-3" appearance="fill">
+            <mat-label>Sede</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+</div>

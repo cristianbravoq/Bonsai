@@ -1,0 +1,95 @@
+<div>
+    <!-- TABLA DE INFORMACION DEL COLEGIO -->
+    <div class="container">
+      <table class="table">
+        <th scope="col" class="justify-left" style="width: 23%;">
+          <img src="../../../assets/images/caf82b_eb703a2d915d4372b462ba38c85bf149_mv2.webp" class="mx-3 mt-3" style="width: 42%;">
+        </th>
+        <th scope="col" class="mt-3 header-info" style="width: 47%;">
+          <div class="container info_text">
+            <div class="text-center info_text mt-1">INSTITUCION EDUCATIVA EL PLACER</div>
+            <div class="text-center info_text">ANSERMANUEVO – VALLE DEL CAUCA</div>
+            <div class="text-center info_text">Res. N° 4072 de Dic 18 del 2009</div>
+            <div class="text-center">DANE 276041000746 – Nit: 891902273 -8 ICFES 105627</div>
+          </div>
+          <div class="container info_text">
+            <p class="text-center info_text">BOLETÍN INFORMATIVO DE VALORACIÓN ACADÉMICA Y CONVIVENCIA</p>
+            <p class="text-center info_text">SEDE: CAMILO TORRES</p>
+          </div>
+        </th>
+        <th scope="col" style="width: 30%;" class="pt-3">
+          <p class="text-center">CODIGO: GA- 0054</p>
+          <p class="text-center">Fecha de elaboración: 29/01/2011
+            </p>
+        </th>
+      </table>
+    </div>
+
+    <!-- TABLA DE INFORMACION DEL ESTUDIANTE -->
+    <div class="container">
+      <table class="table">
+        <tr class="mx-auto" style="width: 20%;">
+          <th scope="col">Nombre</th>
+          <th scope="col">{{student[0].Nombre}}</th>
+          <th scope="col">Año lectivo</th>
+          <th scope="col">{{this.fecha}}-{{this.fechaSigt}}</th>
+        </tr>
+        <tr class="mx-auto" style="width: 30%;">
+          <th scope="col">Documento de identidad.</th>
+          <th scope="col">{{student[0].Documento}}</th>
+          <th scope="col">Informe</th>
+          <th scope="col">XXXXX</th>
+        </tr>
+        <tr class="mx-auto" style="width: 30%;">
+          <th scope="col">Grado.</th>
+          <th scope="col">{{student[0].Grado}}</th>
+          <th scope="col">Jornada</th>
+          <th scope="col">Mañana</th>
+        </tr>
+        <tr class="mx-auto" style="width: 20%;">
+          <th scope="col">Nivel.</th>
+          <th scope="col">Basica primaria</th>
+          <th scope="col">Promovido al grado.</th>
+          <th scope="col">XXXXXX</th>
+        </tr>
+      </table>
+    </div>
+
+    <!-- TABLA DE BOLETIN ESCOLAR -->
+    <div class="container mt-3" *ngFor="let person of this.student">
+      <table class="table table-bordered table-hover ">
+        <thead>
+          <tr>
+            <th scope="col">DIMENSION</th>
+            <th scope="col">VALOR NOTA</th>
+            <th scope="col">HPS</th>
+            <th scope="col">INASISTENCIA ACADEMICA</th>
+            <th scope="col">VALORACION ACUMULADA</th>
+            <th scope="col">VALOR ESCALA NACIONAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
+            <th scope="row" style="width: 180px;">{{ person.Asignatura }}</th>
+            <td>{{ person.Calificacion }}</td>
+            <td></td>
+            <td></td>
+            <td>{{ person.Calificacion }}</td>
+            <td></td>
+          </tr>
+          <tr>
+            <!-- <td colspan="6">
+              <input style="width: 100%;" type="text" contenteditable="true">
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FOOTER DEL BOLETIN -->
+    <div class="container">
+      <h3 class="text-center">
+        JUICIOS PARA MEJORAR LA CONVIVENCIA Y EL RENDIMIENTO ACADEMICO.
+      </h3>
+    </div>
+</div>

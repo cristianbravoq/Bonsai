@@ -1,0 +1,59 @@
+<div class="container-login100" style="background-image: url(../../../../assets/images/bg-01.webp); overflow: hidden;">
+  <div class="container-logininit"> 
+    <div class="div-button">
+      <section class="auth-form">
+
+        <a [routerLink]="['/home']" class="div-center">
+          <small class="btn btn-primary">MENU</small>
+        </a><hr>
+
+          <div class="text-center">
+              <h1 class="h3">{{options.label}}</h1>
+          </div>
+          <form [formGroup]="authForm" (ngSubmit)="onSubmit()" >
+              <div class="mb-3">
+                <input formControlName="email" placeholder="Correo Electronico" type="email" class="form-control input-login" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <input formControlName="password" placeholder="Contraseña" type="password" class="form-control input-login" id="exampleInputPassword1">
+              </div>
+              <div class="container div-button">
+                <button type="submit" class="btn button-login">{{options.label}}</button>
+              </div>
+
+              <div class="d-grid mt-2 text-center">
+                <div class="container mb-3">
+                  <button class="btn btn-danger btn-block m-2" (click)="IngresarConGoogle()">
+                    <div class="flex-c">
+                      <a href="#" class="login100-social-item">
+                        <img src="https://colorlib.com/etc/lf/Login_v9/images/icons/icon-google.png" alt="GOOGLE">
+                      </a>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div class="text-center mt-5">
+
+                <ng-container *ngIf="options.id === signIn ; else showSignTemplate">
+                  <a [routerLink]="['/sign-up']" class="text-black">
+                    Crear una cuenta nueva
+                </a>
+                </ng-container>
+              </div>
+
+
+            </form>
+
+            <ng-template #showSignTemplate>
+
+              <a [routerLink]="['/sign-in']" class="text-black">
+                ¿Ya tienes una cuenta?<br>
+                ¡Entra aqui!
+              </a><br>
+
+            </ng-template>
+      </section>
+
+    </div>
+  </div>
+</div>

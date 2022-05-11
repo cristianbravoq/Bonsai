@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "bonsaiapi"
+  },
+  "targets": {
+    "bonsaiapi": {
+      "hosting": {
+        "Bonsai": [
+          "bonsaiapi"
+        ]
+      }
+    }
+  }
+}

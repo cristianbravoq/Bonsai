@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+
+<div class="b-example-divider w-100 divider_2">
+
+<div class="px-4 py-5 w-100 divider_1 cards" id="custom-cards">
+  <h1 class="pb-2 border-bottom"><strong>Sistema de gestion de datos escolares.</strong></h1>
+
+    <div class="row row-cols-1-sucess row-cols-lg-3 align-items-stretch g-4 py-5">
+
+      <a [routerLink]="['/dashboard']" class="link-ref">
+
+      <div class="col card card__one">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg borde_caja" style="background-image: url('../../../assets/images/academy.webp');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold card__text">Seguimiento Academico.</h2>
+          </div>
+        </div>
+      </div>
+
+      </a>
+
+      <a [routerLink]="['/calendar']" class="link-ref">
+
+      <div class="col card card__two">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg borde_caja" style="background-image: url('../../../assets/images/unsplash-photo-1.webp');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 ">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold card__text">Calendario y Agenda.</h2>
+          </div>
+        </div>
+      </div>
+
+      </a>
+
+      <a [routerLink]="['/enrolment']" class="link-ref">
+        <div class="col card card__three">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg borde_caja" style="background-image: url('../../../assets/images/register.webp');">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold card__text">Registro Estudantil.</h2>
+          </div>
+        </div>
+        </div>
+      </a>
+
+    </div>
+
+</div>
+</div>
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<footer class="bg-light text-center text-white fixed-bottom">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #161747b1;">
+    Copyright © 2022 Bonsai
+    <!-- <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
+  </div>
+  <!-- Copyright -->
+</footer>

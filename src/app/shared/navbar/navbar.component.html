@@ -1,0 +1,41 @@
+<ng-container *ngIf="userLogged | async ; else navTemplate">
+
+  <nav class="navbar lg">
+
+    <div class="container-fluid">
+  
+      <a id="nav_bonsai" [routerLink]="['/home']">
+        <img class="col align-self-center" src="../../../assets/images/Bonsailogblack.png" style="width: 35px;">
+        <strong class="col align-self-center" style="color: #263238;">  BONSAI</strong>
+      </a>
+  
+      <button class="align-self-center btn"><a style="text-decoration:none; color: #263238;" (click)="onLogout()" [routerLink]="['/home']">Salir de la sesion</a></button>
+  
+  
+    </div>
+  
+    </nav>
+
+</ng-container>
+
+<ng-template  #navTemplate>
+
+  <nav class="navbar lg">
+
+    <div class="container-fluid">
+  
+      <a id="nav_bonsai" href="https://revista-bonsai.web.app/">
+        <img class="col align-self-center" src="../../../assets/images/Bonsailogblack.png" style="width: 35px;">
+        <strong class="col align-self-center" style="color: #263238;">  BONSAI</strong>
+      </a>
+  
+      <button mat-button [matMenuTriggerFor]="aboveMenu">Inicio de Sesion</button>
+      <mat-menu #aboveMenu="matMenu" yPosition="above">
+      <button class="align-self-center" mat-menu-item><a style="text-decoration:none; color: black;" class="nav-link" [routerLink]="['/sign-in']">Ingresa</a></button>
+      <button class="align-self-center" mat-menu-item><a style="text-decoration:none; color: black;" class="nav-link" [routerLink]="['/sign-up']">Registrate</a></button>
+      </mat-menu>
+  
+    </div>
+  </nav>
+
+</ng-template>

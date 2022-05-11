@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Source+Sans+Pro:ital,wght@0,400;1,200;1,700&display=swap');
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.containero {
+    padding: 1em;
+    text-align: center;
+}
+
+.estudiante {
+    margin: 1rem;
+}
+
+.estadisticas {
+    left: 10%;
+    position: relative;
+    bottom: -70px;
+    width: 80%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 23% 23% 23% 23%;
+    border-radius: 5px;
+    border: 2px solid #000;
+}
+ 
+.row {
+    margin: 0.9rem;
+    width: auto;
+    text-align: center;
+    border-radius: 8px;
+    border: 2px solid #9FC131;
+}
+
+.items {
+    padding-left: 5%;
+    text-align: left;
+    margin-top: 2px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 53% 13%
+}
+
+.valor {
+    justify-content: end;
+    right: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+    .estadisticas {
+        grid-template-columns: 45% 45%;
+    }
+    .row {
+        font-size: 10px;
+    }
+}
+
+.progress {
+    position: relative;
+    height: 30px;
+    background: #126a53d3;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+.progress__text {
+    position: absolute;
+    top: 50%;
+    left: 29%;
+    right: 30%;
+    transform: translateY(-50%);
+    font: bold 14px "Quicksand", sans-serif;
+    color: #ffffff;
+}
+
+.progressBar {
+    padding: 0;
+    height: 8px;
+    margin-bottom: 2%;
+    border-radius: 2px;
+    background-color: #c8ad29;
+}

@@ -1,0 +1,57 @@
+
+  <nav class="navbar lg navbar-dark bg-dark nav_bonsai1">
+
+    <div class="container-fluid nav_bonsai2">
+      <a id="nav_bonsai" [routerLink]="['/home']" style="text-decoration: none; color: lavender; font-weight: bold;">
+        <img class="col align-self-center" src="../../../assets/images/Bonsailog.png" style="width: 35px;">
+        BONSAI
+      </a>
+      <button class="align-self-center btn"><a style="text-decoration: none; color: lavender;"[routerLink]="['/home']" (click)="onLogout()">Salir de la sesion</a></button>
+    </div>
+  
+  </nav>
+  
+  <div class="container-fluid">
+      <div class="row">
+  
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"><br>
+          <div><hr />
+            <h3>Encontrar estudiante</h3>
+            <app-search (search)="handleSearch($event)" class=""></app-search>
+          </div><hr />
+        </nav>
+  
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bonsaiapp">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Lista de estudiantes</h1>
+          </div>
+  
+          <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Identificacion</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Grado</th>
+                  <th scope="col" class="text-center">Editar</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let student of students | search:filtro_valor ">
+                <tr>
+                  <td>{{student.Documento}}</td>
+                  <td>{{student.Nombre}}</td>
+                  <td>{{student.Apellido}}</td>
+                  <td>{{student.Grado}}</td>
+                  <td><a class="btn btn-info btn-block w-100" [routerLink]="['/academic/', student.idEstudiantes]"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-check mx-auto" viewBox="0 0 16 16">
+                    <path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                  </svg></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+  </div>
